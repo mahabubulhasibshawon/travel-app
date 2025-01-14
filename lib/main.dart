@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/details_screen.dart';
 import 'package:travel_app/screens/welcome_screen.dart';
 import 'package:travel_app/screens/main_screen.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           )
         )
       ),
-      home: const MainScreen(),
+      home: const DetailsScreen(),
     );
   }
 }
