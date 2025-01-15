@@ -4,7 +4,9 @@ import 'package:travel_app/misc/colors.dart';
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
   double? width;
-  ResponsiveButton({super.key, this.isResponsive, this.width});
+  bool  isText;
+  String? text;
+  ResponsiveButton({super.key, this.isResponsive, this.width, required this.isText, this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,15 @@ class ResponsiveButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: AppColors.mainColor
         ),
-        child: Row(
+        child: isText ? Padding(
+          padding: const EdgeInsets.only(left: 50.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            Text(text!, style: TextStyle(color: Colors.white),),
+            Image.asset('assets/img/button-one.png'),
+          ],),
+        ) : Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/img/button-one.png'),

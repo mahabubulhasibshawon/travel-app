@@ -61,7 +61,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         ),
                         SizedBox(height: height * .01),
                         ResponsiveButton(
-                          width: width * .25,
+                          width: width * .25, isText: false,
                         )
                       ],
                     ),
