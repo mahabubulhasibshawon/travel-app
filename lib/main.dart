@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/cubit/apps_cubit.dart';
+import 'package:travel_app/screens/app_cubit_logics.dart';
 import 'package:travel_app/screens/details_screen.dart';
 import 'package:travel_app/screens/welcome_screen.dart';
 import 'package:travel_app/screens/main_screen.dart';
@@ -15,14 +18,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: const AppBarTheme(
-          iconTheme: IconThemeData(
-            color: Colors.black
+          scaffoldBackgroundColor: Colors.white,
+          appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(
+                  color: Colors.black
+              )
           )
-        )
       ),
-      home: const DetailsScreen(),
+      home: BlocProvider(
+        create: (context) => AppsCubit(),
+        child: AppCubitLogics(),
+      ),
     );
   }
 }
