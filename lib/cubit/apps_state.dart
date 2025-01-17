@@ -13,3 +13,9 @@ final class WelcomeState extends AppsState {
   // TODO: implement props
   List<Object?> get props => [];
 }
+
+final class DetailsState extends AppsState {
+  @override
+  // TODO: implement props
+  List<Object?> get props => [];
+}
